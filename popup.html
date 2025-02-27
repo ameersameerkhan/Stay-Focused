@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Blocker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #141414;
+      color: #E0E0E0;
+      font-family: 'Inter', sans-serif;
+      padding: 20px;
+      width: 300px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .toggle-label {
+      margin-right: 10px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #b10303;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #03b103;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    #toggle-status {
+      margin-left: 10px;
+    }
+    .blocked-sites {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .blocked-sites li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #39393a;
+    }
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #E0E0E0;
+      cursor: pointer;
+    }
+    .delete-btn:hover {
+      color: #EF4444;
+    }
+    .add-site {
+      display: flex;
+    }
+    .add-site input {
+      flex-grow: 1;
+      background-color: #383838;
+      border: 1px solid #414141;
+      color: #E0E0E0;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .add-site button {
+      background-color: #0349b1;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>stay focused</h1>
+  <div class="toggle-container">
+    <span class="toggle-label">focus mode :</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle">
+      <span class="slider"></span>
+    </label>
+    <span id="toggle-status">off</span>
+  </div>
+  <div class="add-site">
+    <input type="text" id="new-site" placeholder="Enter website (e.g., example.com)">
+    <button id="add-btn">+</button>
+  </div>  
+  <ul class="blocked-sites" id="blocked-sites"></ul>
+  <script src="popup.js"></script>
+</body>
+</html>
