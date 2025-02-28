@@ -9,7 +9,14 @@ ADHD makes it easy to fall into a rabbit hole of distractions. This extension he
 - Blocks predefined distracting sites
 - Add more sites
 - Redirect to a custom page  
-- Lightweight, slick and easy to use  
+- Lightweight and easy to use
+
+### Simple, slick UI
+![image](https://github.com/user-attachments/assets/ef10ec6c-708a-485e-8ede-cd221ff94a5f)
+
+### Block Screen: Keeping it real
+![image](https://github.com/user-attachments/assets/de8dd0a3-358f-4730-932f-1625ef358ded)
+
 
 ## 🛠️ Tech Stack
 - **Manifest v3**  
