@@ -2,20 +2,29 @@
 const DEFAULT_BLOCKED_SITES = [
   "youtube.com",
   "instagram.com",
+  "pinterest.com",
   "x.com",
   "twitter.com",
-  "bbc.co.uk",
   "facebook.com",
   "tiktok.com",
-  "bbc.com",
-  "techcrunch.com",
+  "bbc.co.uk",
+  "bbc.com",  
   "ndtv.com",
+  "techcrunch.com",
   "netflix.com",
   "web.whatsapp.com",
   "web.telegram.org",
   "open.spotify.com",
+  "canva.com",
+  "linkedin.com",
+  "quora.com",
+  "medium.com",
+  "reddit.com",
+  "indiehackers.com",
+  "producthunt.com",
+  "starterstory.com",
 ];
-
+  
 // Function to update blocking rules
 function updateRules() {
   chrome.storage.sync.get(["blockedSites", "isBlocking"], (data) => {
