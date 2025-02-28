@@ -15,7 +15,7 @@ ADHD makes it easy to fall into a rabbit hole of distractions. This extension he
 
 
 ### Simple, slick UI
-![image](https://github.com/user-attachments/assets/ef10ec6c-708a-485e-8ede-cd221ff94a5f)
+![image](https://github.com/user-attachments/assets/687db28e-cfd9-4906-b815-641b561de50f)
 
 
 ### Block Screen: Keeping it real
