@@ -23,6 +23,12 @@ const DEFAULT_BLOCKED_SITES = [
   "indiehackers.com",
   "producthunt.com",
   "starterstory.com",
+  "chess.com",
+  "miniclip.com",
+  "lichess.org",
+  "8ballpool.com",
+  "chess24.com",
+  "chessbase.com",
 ];
   
 // Function to update blocking rules
