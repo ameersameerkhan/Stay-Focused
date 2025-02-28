@@ -29,6 +29,8 @@ const DEFAULT_BLOCKED_SITES = [
   "8ballpool.com",
   "chess24.com",
   "chessbase.com",
+  "gmail.com",
+  "slack.com",
 ];
   
 // Function to update blocking rules
