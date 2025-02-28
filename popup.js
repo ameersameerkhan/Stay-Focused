@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const blockedSitesList = document.getElementById('blocked-sites');
   const newSiteInput = document.getElementById('new-site');
   const addBtn = document.getElementById('add-btn');
+  const toggleListBtn = document.getElementById('toggle-list');
 
+  // Load initial state
   chrome.storage.sync.get(['blockedSites', 'isBlocking'], (data) => {
     const blockedSites = data.blockedSites || [];
     const isBlocking = data.isBlocking || false;
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBlockedSitesList(blockedSites);
   });
 
+  // Toggle focus mode
   toggle.addEventListener('change', () => {
     const isBlocking = toggle.checked;
     toggleStatus.textContent = isBlocking ? 'on' : 'off';
@@ -21,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Add new site
   addBtn.addEventListener('click', () => {
     const newSite = newSiteInput.value.trim();
     if (newSite) {
@@ -38,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Delete site
   blockedSitesList.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete-btn')) {
       const siteToRemove = e.target.parentElement.firstChild.textContent;
@@ -51,6 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Toggle blocked sites list visibility
+  toggleListBtn.addEventListener('click', () => {
+    const isHidden = blockedSitesList.style.display === 'none';
+    blockedSitesList.style.display = isHidden ? 'block' : 'none';
+    toggleListBtn.textContent = isHidden ? 'hide' : 'show';
+  });
+
+  // Update blocked sites list
   function updateBlockedSitesList(sites) {
     blockedSitesList.innerHTML = '';
     sites.forEach(site => {
